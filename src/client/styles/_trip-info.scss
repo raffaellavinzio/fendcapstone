@@ -1,0 +1,45 @@
+.trip__results {
+  padding: 1rem;
+  background-color: rgba($color-light, 0.8);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, min-content);
+  row-gap: 1rem;
+}
+
+.trip__info {
+  font-size: 1.2rem;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  margin-bottom: 1rem;
+}
+
+.trip__wrapper-grid {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+#icon {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: center;
+  padding: 0.5rem;
+}
+
+#text {
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+#alert {
+  margin-top: 0.5rem;
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  & a {
+    color: $color-dark;
+  }
+}
+
+.capitalize {
+  text-transform: capitalize;
+}

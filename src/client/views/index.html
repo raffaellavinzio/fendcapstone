@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+      Travel planner
+    </title>
+    <meta name="description" content="travel app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>
+        MyTravelPlanner
+      </h1>
+      <canvas id="icon-logo" width="64" height="64"></canvas>
+    </header>
+    <main class="main">
+      <img class="trip__picture" src="" alt="destination pic" />
+      <div class="trip__wrapper">
+        <form class="trip" action="">
+          <label class="trip__label" for="destination">
+            my trip to:
+            <input
+              id="city"
+              class="trip__input"
+              placeholder="enter a city ex. Paris, New York,.."
+              type="text"
+            />
+          </label>
+          <span id="destination-error" class="trip__error hide"></span>
+          <!-- adding date placeholder for Safari desktop and IE -->
+          <label class="trip__label" for="date">
+            departing:
+            <input
+              id="date"
+              class="trip__input"
+              placeholder="yyyy-mm-dd"
+              type="date"
+            />
+          </label>
+          <span id="date-error" class="trip__error hide"></span>
+          <button type="button" id="submit" class="trip__btn--save">
+            search
+          </button>
+          <button type="button" id="clear" class="trip__btn--remove">
+            clear
+          </button>
+          <span id="form-error" class="trip__error hide"></span>
+        </form>
+        <div class="trip__results">
+          <p class="trip__info"></p>
+          <canvas id="icon" width="64" height="64"></canvas>
+          <div class="trip__wrapper-grid">
+            <p id="text" class="trip__info"></p>
+            <p id="temperature" class="trip__info"></p>
+          </div>
+          <p id="alert" class="trip__info"></p>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <a href="https://darksky.net/poweredby/"
+        ><img
+          src="../media/darkskylogo.svg"
+          alt="darksky logo"
+          width="95"
+          height="64"
+      /></a>
+      <a href="https://www.geonames.org/"
+        ><img
+          src="../media/geonameslogo.svg"
+          alt="geonames logo"
+          width="95"
+          height="64"
+      /></a>
+      <a class="pixabay" href="https://pixabay.com">
+        <img
+          src="../media/pixabaylogo.svg"
+          alt="pixabay logo"
+          width="95"
+          height="64"
+      /></a>
+    </footer>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  </body>
+</html>
