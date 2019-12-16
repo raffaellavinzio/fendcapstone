@@ -35,3 +35,6 @@ Unit, integration and E2E tests are implemented with jest using various techniqu
 ## proxy server
 
 All APIs are accessed through a local proxy server to prevent CORS errors (i.e Dark Sky API) and/or to make use of environmental variables to protect secret access credentials (all three APIs). Client to server parameters transmission is handled using express route parameters. I did not use the cors middleware because node-fetch in the server context ignores it [ref](https://github.com/bitinn/node-fetch/blob/HEAD/LIMITS.md).
+
+## App is deployed on Heroku
+https://fendcapstone.herokuapp.com/
