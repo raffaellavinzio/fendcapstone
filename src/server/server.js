@@ -6,17 +6,14 @@ const fetch = require('node-fetch');
 const app = express();
 
 /* MIDDLEWARE */
-// Parses the text as URL encoded data (which is how browsers tend
-// to send form data from regular forms set to POST) and exposes
+// Parses the text as URL encoded data and exposes
 // the resulting object (containing the keys and values) on req.body
 app.use(express.urlencoded({ extended: true }));
 // Parses the text as JSON and exposes the resulting object on req.body.
 app.use(express.json({ limit: '1mb' }));
-
 /* initialize website folder to connect server and client side */
-app.use(express.static('dist'));
 
-//app.listen(process.env.PORT || 3000);
+app.use(express.static('dist'));
 
 // geonames API
 app.get('/geonamesapi/:city', async (request, response) => {
